@@ -187,6 +187,7 @@ footer p {
 
 #flexbox > div > p > a {
   text-decoration: none;
+  color: inherit;
 }
 
 #footer {
