@@ -1,0 +1,242 @@
+@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
+
+* {
+  font-family: "Oxanium", sans-serif;
+  color: #ffffff;
+  scroll-behavior: smooth;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+body::-webkit-scrollbar {
+    display: none;
+  }
+
+a:hover {
+  color: #528AAE;
+  cursor: pointer;
+}
+
+body {
+    background-color: #000000;
+    margin: 0;
+}
+
+#header {
+  background-color: #e70000;
+  width: 100%;
+  height: 5%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  padding: 20px;
+  margin: 0;
+}
+
+#logo {
+  padding-top:10px;
+  width: 110px;
+  margin: 20px;
+}
+
+nav {
+  width: 75%;
+  max-width: 400px;
+  height: 50px;
+}
+
+nav > ul {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-inline-start: 0;
+  margin-block: 0;
+  height: 100%;
+}
+
+nav > ul > li {
+  margin: 0 0.2rem;
+  padding: 0.2rem;
+  display: block;
+}
+
+li > a {
+  color: #000000;
+  text-decoration: none;
+}
+
+main{
+  width: 100%;
+}
+
+#groupphoto {
+    width: 100vw;
+    margin-top: 70px;
+}
+
+#aespamainlogo {
+  padding: 80px;
+  width: 25vw;
+}
+
+#desc {
+  font-size: large;
+}
+
+#introduction {
+  margin-bottom: 100px;
+}
+
+#grid {
+  display: grid;
+  margin: 20px auto;
+  width: 80%;
+  grid-template-columns: repeat(2, 1fr);
+  grid-row: auto auto;
+  grid-column-gap: 20px;
+  grid-row-gap: 20px;
+  margin-top: 70px;
+}
+
+.grid-item {
+  background-color: #0A2239;
+  padding: 20px;
+}
+
+.ningning {
+  font-size: 2.5vw;
+}
+
+#image, img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+h2, h3{
+  font-size: 3.2vw;
+  font-weight: 700;
+}
+
+h1{
+  font-size: 5vw;
+  font-weight: 700;
+}
+
+h3:first-of-type {
+  padding-top: 0;
+}
+
+#title {
+  font-size: 8vw;
+}
+
+footer p {
+  text-align: center;
+  line-height: 8px;
+  font-size: 13px;
+}
+
+.center {
+  text-align: center;
+  display: block;
+  margin:auto;
+  width: 50%;
+}
+
+#dramavideo {
+  display: block; 
+  margin: 50px auto; 
+  width: 80%;
+  height: 80vh;
+}
+
+.grid-item-photo {
+  float: left;
+  width: 50%;
+  margin: 20px;
+}
+
+.grid-item-desc{
+  padding: 20px;
+}
+
+#Discography {
+  margin: 20px;
+  padding: 20px;
+}
+
+#flexbox {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+  justify-content: space-evenly;
+  margin-top: 20px;
+}
+
+#flexbox > div {
+  width:20%;
+}
+
+#flexbox > div > p > a {
+  text-decoration: none;
+}
+
+#footer {
+  background-color: #0A2239;
+  padding: 0.3em;
+}
+
+@media only screen and (min-device-width: 480px) and (max-width: 767px){
+  #grid {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .grid-item {
+    background-color: #0A2239;
+  }
+
+  .grid-item-photo {
+    height: 100%;
+  }
+
+  #desc {
+    width: 80%;
+  }
+
+  #aespamainlogo {
+    padding: 50px;
+    width: 40vw;
+  }
+
+  p {
+    font-size: 2.8vw;
+  }
+
+  h1{
+    font-size: 40px;
+    font-weight: 900;
+  }
+
+  #dramavideo {
+    height: 45vh;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-width: 1281px){
+  #desc {
+    width: 70%;
+  }
+
+  #aespamainlogo {
+    width: 40vw;
+  }
+}
