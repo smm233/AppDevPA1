@@ -33,9 +33,11 @@ body {
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  top: 0;
   padding: 20px;
   margin: 0;
+  top: 0;
+  left: 0;
+  z-index: 5;
 }
 
 #logo {
@@ -58,6 +60,7 @@ nav > ul {
   padding-inline-start: 0;
   margin-block: 0;
   height: 100%;
+  padding-right: 20px;
 }
 
 nav > ul > li {
@@ -76,8 +79,78 @@ main{
 }
 
 #groupphoto {
-    width: 100vw;
-    margin-top: 70px;
+  width: 100vw;
+  margin-top: 70px;
+  /* height: 680px; */
+  object-fit: cover;
+  object-position: 0 0;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+
+.overlay-text h1 {
+  font-size: 7vw;
+  padding: 20px;
+  
+}
+
+.overlay-text h2 {
+  font-size: 2.5vw;
+}
+
+.overlay-text a {
+  text-decoration: none;
+
+}
+
+.overlay-text a:hover {
+  text-decoration: underline;
+  color: #0A2239;
+}
+
+.overlay-text {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  margin-bottom: 20px; /* Add margin to create space for the button */
+  padding-bottom: 60px; /* Adjust to accommodate button height */
+  z-index: 4;
+}
+
+.image-container {
+  position: relative;
+}
+
+.gradient-overlay {
+  position: relative; /* Ensure the overlay is positioned relative to the image container */
+}
+
+.gradient-overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), black);
+  pointer-events: none; /* Ensures the overlay doesn't block interaction with underlying elements */
+  z-index: 1;
+}
+
+
+@media (max-width: 680px) {
+  .image-container {
+    overflow: hidden; /* Hide overflow to ensure the gradient is applied only to the visible part of the image */
+  }
+}
+
+.memberdesc h1 {
+  font-size: 7vw;
+  margin-bottom: 0;
 }
 
 #aespamainlogo {
@@ -101,7 +174,6 @@ main{
   grid-row: auto auto;
   grid-column-gap: 20px;
   grid-row-gap: 20px;
-  margin-top: 70px;
 }
 
 .grid-item {
@@ -174,6 +246,7 @@ footer p {
 
 #flexbox {
   display: flex;
+  flex-direction:  row;
   flex-wrap: wrap;
   width: 100%;
   gap: 10px;
@@ -195,7 +268,48 @@ footer p {
   padding: 0.3em;
 }
 
-@media only screen and (min-device-width: 360px) and (max-width: 767px){
+div > h3 > a {
+  text-decoration: none;
+}
+
+.grid-item-desc > h3 > a:hover {
+  text-decoration: none;
+  font-weight: bolder;
+}
+
+.memberflexbox {
+  display: flex;
+  width: 80%;
+  margin: 75px;
+}
+
+.memberimg {
+  width: 60%;
+  margin: 5vw;
+  height: auto;
+}
+
+.memberdesc {
+  width: 100%;
+}
+
+.memberphotos {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 90%;
+}
+
+.membergallery {
+  margin: 50px;
+}
+
+.memberphotos img {
+  width: 20%;
+  margin: 10px;
+}
+
+@media only screen and (min-device-width: 480px) and (max-width: 767px){
   #grid {
     display: flex;
     flex-direction: column;
@@ -227,17 +341,70 @@ footer p {
     font-weight: 900;
   }
 
+  .memberdesc h1 {
+    font-size: 60px;
+  }
+
   #dramavideo {
     height: 45vh;
   }
-}
 
-@media only screen and (min-device-width: 768px) and (max-width: 1281px){
+  #flexbox, .memberflexbox, .memberphotos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+  }
+
+  #flexbox > div {
+    width:50%;
+  }
+  
+  .aespamainlogo {
+    top: -10vh;
+  }
+
+  .memberflexbox {
+    display: flex;
+    width: 80%;
+    margin-top: 75px;
+  }
+  
+  .memberimg {
+    width: 90%;
+  }
+
+  .memberphotos img {
+    width: 80%;
+    margin: 3vh;
+  }
+  }
+
+
+
+@media only screen and (min-device-width: 768px) and (max-width: 960px){
   #desc {
     width: 70%;
   }
 
   #aespamainlogo {
     width: 40vw;
+  }
+
+  .aespamainlogo {
+    top: -20vh;
+  }
+
+  .memberflexbox, .memberphotos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    padding-top: 5vh;
+  }
+
+  .memberphotos img {
+    width: 80%;
+    margin: 3vh;
   }
 }
